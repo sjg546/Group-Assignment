@@ -22,8 +22,9 @@ int main(){
     // cout<<"1.List Movies"<<endl<<"2.List Booked Tickets"<<endl<<"3.View Purchased Tickets"<<endl;
 
   cina->addMovie(InfinityWar);
-  cina->printMovies();
-
+  //cina->printMovies();
+  InfinityWar.bookTicket(4,5);
+  InfinityWar.printMovieTickets();
 
   return 0;
 }
