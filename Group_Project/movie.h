@@ -17,10 +17,10 @@ public:
   //default state constructor for movie object
   Movie();
   Movie(string name, int mtime);
-
   //returning movie name and movie time
   void setMovieName(string name);
   void setMovieTime(int movTime);
+  void printMovieNumbers();
   string getMovieName();
   int getMovieTime();
   void bookTicket(int a, int b);

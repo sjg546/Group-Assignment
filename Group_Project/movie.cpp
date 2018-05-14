@@ -39,12 +39,26 @@ int Movie::getMovieTime(){
 void Movie::bookTicket(int a,int b){
   movieSeats[a][b] = 1;
 }
+void Movie::printMovieNumbers(){
+  cout<<"Your Booked Tickets are"<<endl;
+  for(int i = 0 ;i <10;i++){
+    for(int j = 0;j<30;j++){
+      if(movieSeats[i][j] == 1){
+        cout<<i<<","<<j<<endl;
+      }
+    }
 
+  }
+}
 //printing the movie tickets
 void Movie::printMovieTickets(){
   for(int i = 0;i<10;i++){
     for(int j = 0;j<30;j++){
       cout<<movieSeats[i][j]<<",";
+      //splitting the cinemae into thirds to make it easier to see
+      if(j%10 == 0 && j!=0){
+        cout<<"       ";
+      }
     }
       cout<<endl;
   }

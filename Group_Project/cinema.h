@@ -13,9 +13,7 @@ public:
   //declaring how many seats there are in the cinema
   int cinemaSeats[10][30];
   int movieNo;
-
   Movie *movies;
-  
   Cinema();
   Cinema(string cinName);
   string getCinemaName();
@@ -24,6 +22,6 @@ public:
   void addMovie(Movie movie);
 
 
-
+  
 };
 #endif //defining cinema class
