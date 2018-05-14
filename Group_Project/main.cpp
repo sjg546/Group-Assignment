@@ -22,12 +22,12 @@ int main(){
   InfinityWar.setMovieTime(149);
 
 //actual running of the progragm
+
+
   cout<<"Welcome to Big Cinema booking System"<<endl;
   cout<<"Press 1 to Book Tickets"<<endl;
 
   cin>>input;
-
-
 
 
   if(input == 1){
