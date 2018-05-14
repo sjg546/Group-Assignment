@@ -5,11 +5,25 @@
 using namespace std;
 
 int main(){
+
+  //creating a new cinema
   Cinema *cina;
-
   cina = new Cinema();
+  int input;
 
-  cout<<cina->getCinemaName();
+  Movie InfinityWar;
+
+  //have to create movies like this
+  InfinityWar.setMovieName("Infinity War");
+  InfinityWar.setMovieTime(149);
+
+    // cout<<"Welcome to Big Cinema booking System"<<endl;
+    // cout<<"Please Select an Option from Below!!"<<endl<<endl;
+    // cout<<"1.List Movies"<<endl<<"2.List Booked Tickets"<<endl<<"3.View Purchased Tickets"<<endl;
+
+  cina->addMovie(InfinityWar);
+  cina->printMovies();
+
 
   return 0;
 }
