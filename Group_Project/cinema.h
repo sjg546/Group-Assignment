@@ -18,6 +18,7 @@ public:
   Cinema(string cinName);
   string getCinemaName();
   int getCinemaNo();
+  void setCinemaName(string name);
   void printMovies();
   //once the movie is booked and changed update the array
   void updateMovie(int a,Movie movie);

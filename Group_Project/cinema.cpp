@@ -20,11 +20,13 @@ string Cinema::getCinemaName(){
 int Cinema::getCinemaNo(){
   return movieNo;
 }
+void Cinema::setCinemaName(string name){
+  cinemaName = name;
+}
 
 void Cinema::printMovies(){
   for(int i = 0;i<movieNo;i++){
-    cout<<movies[i].getMovieName()<<endl;
-    cout<<movies[i].getMovieTime()<<endl;
+    cout<< i<<"."<<movies[i].getMovieName()<<" With a Run Time of "<<movies[i].getMovieTime()<<" Minutes."<<endl;
     }
   }
 void Cinema::addMovie(Movie movie){

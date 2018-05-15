@@ -44,7 +44,7 @@ void Movie::printMovieNumbers(){
   for(int i = 0 ;i <10;i++){
     for(int j = 0;j<30;j++){
       if(movieSeats[i][j] == 1){
-        cout<<i<<","<<j<<endl;
+        cout<<"Row - "<<i<<","<<j<<endl;
       }
     }
 
