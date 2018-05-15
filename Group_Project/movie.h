@@ -12,8 +12,6 @@ public:
   string movieName;
   int movieTime;
   int movieSeats[10][30];
-
-
   //default state constructor for movie object
   Movie();
   Movie(string name, int mtime);
@@ -25,9 +23,8 @@ public:
   int getMovieTime();
   void bookTicket(int a, int b);
   bool isTicketBooked(int a, int b);
+  
   void printMovieTickets();
   ~Movie();
-
-
 };
 #endif// defining the movie class

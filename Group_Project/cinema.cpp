@@ -32,3 +32,9 @@ void Cinema::addMovie(Movie movie){
   movies[movieNo] = movie;
   movieNo +=1;
 }
+void Cinema::updateMovie(int a,Movie movie1){
+  movies[a] = movie1;
+}
+Movie Cinema::getMovie(int movieNo){
+  return movies[movieNo];
+}

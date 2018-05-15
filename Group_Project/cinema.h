@@ -19,9 +19,12 @@ public:
   string getCinemaName();
   int getCinemaNo();
   void printMovies();
-  void addMovie(Movie movie);
+  //once the movie is booked and changed update the array
+  void updateMovie(int a,Movie movie);
+  void addMovie(Movie movie1);
+  Movie getMovie(int movieNo);
 
 
-  
+
 };
 #endif //defining cinema class
