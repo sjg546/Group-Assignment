@@ -55,7 +55,7 @@ void Movie::printMovieTickets(){
   for(int i = 0;i<10;i++){
     for(int j = 0;j<30;j++){
       cout<<movieSeats[i][j]<<",";
-      //splitting the cinemae into thirds to make it easier to see
+      //splitting the cinema into thirds to make it easier to see
       if(j%10 == 0 && j!=0){
         cout<<"       ";
       }
@@ -64,6 +64,14 @@ void Movie::printMovieTickets(){
   }
 }
 
+//checking to see if a particular seat is booked and returning true or false depending on whether it is
+bool Movie::isTicketBooked(int a,int b){
+    if(movieSeats[a][b]==1){
+      return true;
+    }else{
+      return false;
+    }
+}
 
 Movie::~Movie(){
 

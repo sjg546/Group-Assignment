@@ -35,7 +35,14 @@ int main(){
     cout<<"Enter Seat You Would Like To Book"<<endl;
     cin>> ticketX;
     cin>> ticketY;
+
+    if(InfinityWar.isTicketBooked(ticketX,ticketY)==false){
     InfinityWar.bookTicket(ticketX,ticketY);
+  }else{
+    cout<<"Sorry that Ticket has already been Booked!!! \n";
+  }
+
+
     cout<<"Would You Like to Book another Ticket? \nPress 1 to book another Ticket    2 To Print Booked Tickets     3 to Exit"<<endl;
     cin>>input;
     if(input == 2){

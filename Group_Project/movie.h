@@ -24,6 +24,7 @@ public:
   string getMovieName();
   int getMovieTime();
   void bookTicket(int a, int b);
+  bool isTicketBooked(int a, int b);
   void printMovieTickets();
   ~Movie();
 
