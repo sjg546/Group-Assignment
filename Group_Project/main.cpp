@@ -1,23 +1,38 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <cctype>
 #include "cinema.h"
 
 
 using namespace std;
 
+int parseInput(){
+  int a;
+  while(!(cin>>a)){
+    cin.clear();
+    cin.ignore(999, '\n');
+    cout<<"Try Again\n";
+  }
+  return a;
+}
+
+
 int main(){
+
 
   //creating a new cinema
   Cinema *cina;
   cina = new Cinema();
   cina->setCinemaName("Big Cinema 1");
-  //variable declaratio
+
+  //variable declaration
   int input;
   int ticketX;
   int ticketY;
   int movieSelection = 0;
   bool running =true;
   Movie InfinityWar,deadpool, rapunzel, tempMovie;
-
 
   //have to create movies like this
 
@@ -41,7 +56,8 @@ int main(){
 
   cout<<"Enter the number to the left of the movie to select\n";
 
-  cin>>input;
+  input = parseInput();
+  //cin>>input;
   tempMovie = cina->getMovie(input);
 
   cout<< "You have selected "<<tempMovie.getMovieName()<<endl;
