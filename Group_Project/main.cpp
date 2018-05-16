@@ -4,23 +4,22 @@
 #include <cctype>
 #include "cinema.h"
 
-
 using namespace std;
 
-int parseInput(){
+//only accepts numbers need to add bound in function declaration to get
+//rid of out of bounds errors
+int parseInput(int b){
   int a;
-  while(!(cin>>a)){
+  while((!(cin>>a))&&(a<b)){
     cin.clear();
     cin.ignore(999, '\n');
-    cout<<"Try Again\n";
+    cout<<"You Have Not Entered a valid Number\n";
   }
   return a;
 }
 
 
 int main(){
-
-
   //creating a new cinema
   Cinema *cina;
   cina = new Cinema();
@@ -33,7 +32,6 @@ int main(){
   int movieSelection = 0;
   bool running =true;
   Movie InfinityWar,deadpool, rapunzel, tempMovie;
-
   //have to create movies like this
 
   InfinityWar.setMovieName("Infinity War");
@@ -49,6 +47,8 @@ int main(){
   cina->addMovie(InfinityWar);
   cina->addMovie(deadpool);
   cina->addMovie(rapunzel);
+
+  //cina->calculateSchedule();
   //actual running of the progragm
   cout<<"Welcome to Big Cinema booking System"<<endl;
   cout<<cina->getCinemaName()<<" has the movies\n";
@@ -56,7 +56,7 @@ int main(){
 
   cout<<"Enter the number to the left of the movie to select\n";
 
-  input = parseInput();
+  input = parseInput(3);
   //cin>>input;
   tempMovie = cina->getMovie(input);
 
@@ -65,14 +65,13 @@ int main(){
   cout<<"Press 1 to Book Tickets"<<endl;
 
   //input variable
-  cin>>input;
-
+  input = parseInput(1);
 
   if(input == 1){
     while(running == true){
     cout<<"Enter Seat You Would Like To Book"<<endl;
-    cin>> ticketX;
-    cin>> ticketY;
+    ticketX = parseInput(10);
+    ticketY = parseInput(30);
     //checking if the ticket is already booked
     if(tempMovie.isTicketBooked(ticketX,ticketY)==false){
     tempMovie.bookTicket(ticketX,ticketY);
@@ -80,7 +79,7 @@ int main(){
     cout<<"Sorry that Ticket has already been Booked!!! \n\n";
     }
     cout<<"Would You Like to Book another Ticket? \nPress 1 to book another Ticket    2 To Print Booked Tickets     3 to Exit"<<endl;
-    cin>>input;
+    input = parseInput(4);
     if(input == 2){
       tempMovie.printMovieNumbers();
     }

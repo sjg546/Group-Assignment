@@ -40,3 +40,13 @@ void Cinema::updateMovie(int a,Movie movie1){
 Movie Cinema::getMovie(int movieNo){
   return movies[movieNo];
 }
+void Cinema::calculateSchedule(){
+  int cumulativeTotal = 0;
+
+  for(int i = 0;i<5;i++){
+      cumulativeTotal += movies[movieNo].getMovieTime();
+        schedule[i] = 900 + cumulativeTotal;
+        cout<<"Movie Time: "<< schedule[i]<<endl;
+}
+
+}

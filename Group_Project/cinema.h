@@ -10,6 +10,7 @@ class Cinema{
 
 public:
   string cinemaName;
+  int schedule[5];
   //declaring how many seats there are in the cinema
   int cinemaSeats[10][30];
   int movieNo;
@@ -20,6 +21,7 @@ public:
   int getCinemaNo();
   void setCinemaName(string name);
   void printMovies();
+  void calculateSchedule();
   //once the movie is booked and changed update the array
   void updateMovie(int a,Movie movie);
   void addMovie(Movie movie1);
