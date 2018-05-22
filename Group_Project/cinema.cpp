@@ -43,6 +43,9 @@ void Cinema::updateMovie(int a,Movie movie1){
 Movie Cinema::getMovie(int movieNo){
   return movies[movieNo];
 }
+void Cinema::printMovieName(int a){
+  cout<<movies[a].getMovieName()<<endl;
+}
 void Cinema::calculateSchedule(){
   int cumulativeTotal = 0;
 
@@ -52,4 +55,17 @@ void Cinema::calculateSchedule(){
         cout<<"Movie Time: "<< schedule[i]<<endl;
 }
 
+}
+void Cinema::printSeatLayout(){
+  for(int i = 0;i<10;i++){
+
+    for(int j = 0;j<30;j++){
+      cout<<cinemaSeats[i][j]<<",";
+      //splitting the cinema into thirds to make it easier to see
+      if(j%10 == 0 && j!=0){
+        cout<<"       ";
+      }
+    }
+      cout<<endl;
+  }
 }
