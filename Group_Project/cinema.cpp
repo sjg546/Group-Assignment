@@ -57,6 +57,7 @@ void Cinema::calculateSchedule(){
 
 }
 void Cinema::printSeatLayout(){
+    cout<<"Row 0: ";
   for(int i = 0;i<10;i++){
 
     for(int j = 0;j<30;j++){
@@ -66,6 +67,9 @@ void Cinema::printSeatLayout(){
         cout<<"       ";
       }
     }
-      cout<<endl;
+    if(i<=8){
+        cout<<endl<<"Row "<<i+1<<": ";
+    }
   }
+  cout<<endl;
 }
