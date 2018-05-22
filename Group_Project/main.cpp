@@ -10,23 +10,29 @@ using namespace std;
 //rid of out of bounds errors
 int parseInput(int b){
   int a;
-  while((!(cin>>a))&&(a<b)){
+  while(!(cin>>a)){
     cin.clear();
     cin.ignore(999, '\n');
-    cout<<"You Have Not Entered a valid Number\n";
+    cout<<"You Have Not Entered a valid Number, Try Again!\n";
+  }
+  if(a>b){
+    a = b;
   }
   return a;
 }
-
 
 int main(){
   //creating a new cinema
   Cinema *cina;
   cina = new Cinema();
   cina->setCinemaName("Big Cinema 1");
+  //creating people variables
+  Person *person, *tempPerson;
+  person = new Person();
 
   //variable declaration
   int input;
+  string name;
   int ticketX;
   int ticketY;
   int movieSelection = 0;
@@ -51,35 +57,57 @@ int main(){
   //cina->calculateSchedule();
   //actual running of the progragm
   cout<<"Welcome to Big Cinema booking System"<<endl;
-  cout<<cina->getCinemaName()<<" has the movies\n";
-  cina->printMovies();
+  cout<<"Note: If you get smart and try and enter a number higher than is allowed it will choose the highest possible!"<<endl;
 
-  cout<<"Enter the number to the left of the movie to select\n";
+  /*
+  Enter name    from person clSS
+  Enter Age     from person class
 
-  input = parseInput(3);
-  //cin>>input;
-  tempMovie = cina->getMovie(input);
+  */
+  cout<<"Please Enter Your Name"<<endl;
 
-  cout<< "You have selected "<<tempMovie.getMovieName()<<endl;
+  cin>>name;
+
+  person->setName(name);
+
+  cout<<"Hi "<<person->getName()<<endl;
 
   cout<<"Press 1 to Book Tickets"<<endl;
 
   //input variable
   input = parseInput(1);
 
-  if(input == 1){
+  cout<<cina->getCinemaName()<<" has the movies\n";
+  cina->printMovies();
+
+  cout<<"Enter the number to the left of the movie to select\n";
+
+  input = parseInput(2);
+  //cin>>input;
+  tempMovie = cina->getMovie(input);
+
+  cout<< "You have selected "<<tempMovie.getMovieName()<<endl;
+
     while(running == true){
     cout<<"Enter Seat You Would Like To Book"<<endl;
-    ticketX = parseInput(10);
-    ticketY = parseInput(30);
+    ticketX = parseInput(9);
+    ticketY = parseInput(29);
+
+    if(person->addTickets(ticketX,ticketY) == true){
+/*
+person class add ticket to ticketX to tickets bought array bought[x][y]
+then add ticket y to person class ticket array
+*/
+
     //checking if the ticket is already booked
     if(tempMovie.isTicketBooked(ticketX,ticketY)==false){
     tempMovie.bookTicket(ticketX,ticketY);
     }else{
     cout<<"Sorry that Ticket has already been Booked!!! \n\n";
     }
+  }
     cout<<"Would You Like to Book another Ticket? \nPress 1 to book another Ticket    2 To Print Booked Tickets     3 to Exit"<<endl;
-    input = parseInput(4);
+    input = parseInput(3);
     if(input == 2){
       tempMovie.printMovieNumbers();
     }
@@ -87,10 +115,8 @@ int main(){
       running =false;
     }
   }
-
-  tempMovie.printMovieTickets();
-  }
-
+  person->printReceipt();
+  //tempMovie.printMovieTickets();
   cina->updateMovie(movieSelection,tempMovie);
   return 0;
 }

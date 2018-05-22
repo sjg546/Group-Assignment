@@ -9,6 +9,7 @@ class Movie{
 
 public:
 
+
   string movieName;
   int movieTime;
   int movieSeats[10][30];
@@ -19,7 +20,6 @@ public:
   //returning movie name and movie time
   void setMovieName(string name);
   void setMovieTime(int movTime);
-  
 
   void printMovieNumbers();
   string getMovieName();

@@ -1,5 +1,6 @@
 #include<iostream>
 #include "movie.h"
+#include "person.h"
 
 #ifndef CINEMA_H
 #define CINEMA_H
@@ -22,6 +23,7 @@ public:
   void setCinemaName(string name);
   void printMovies();
   void calculateSchedule();
+  int getMovieID();
   //once the movie is booked and changed update the array
   void updateMovie(int a,Movie movie);
   void addMovie(Movie movie1);

@@ -23,6 +23,9 @@ int Cinema::getCinemaNo(){
 void Cinema::setCinemaName(string name){
   cinemaName = name;
 }
+int Cinema::getMovieID(){
+  return movieNo;
+}
 
 void Cinema::printMovies(){
   for(int i = 0;i<movieNo;i++){

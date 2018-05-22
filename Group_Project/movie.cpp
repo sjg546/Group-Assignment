@@ -20,7 +20,6 @@ Movie::Movie(string name,int mtime){
   movieName = name;
   movieTime = mtime;
 }
-
 void Movie::setMovieName(string name){
   movieName = name;
 }
